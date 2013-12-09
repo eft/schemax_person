@@ -21,7 +21,7 @@ function schemax_person_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'auto_entitylabel_pattern_node_schemax_person';
-  $strongarm->value = '[node:field-schemax-first-name][node:field_schemax_last_name]';
+  $strongarm->value = '[node:field-schemax-first-name] [node:field_schemax_last_name]';
   $export['auto_entitylabel_pattern_node_schemax_person'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -114,7 +114,7 @@ function schemax_person_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '-5',
+          'weight' => '0',
         ),
         'path' => array(
           'weight' => '30',

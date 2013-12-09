@@ -35,7 +35,7 @@ function schemax_person_field_default_field_instances() {
           'use_widget_handlers' => 1,
         ),
         'type' => 'addressfield_default',
-        'weight' => 5,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -65,7 +65,7 @@ function schemax_person_field_default_field_instances() {
         ),
       ),
       'type' => 'addressfield_standard',
-      'weight' => 32,
+      'weight' => 8,
     ),
   );
 
@@ -88,7 +88,7 @@ function schemax_person_field_default_field_instances() {
           'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
-        'weight' => 3,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -122,7 +122,7 @@ function schemax_person_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_select',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -134,11 +134,11 @@ function schemax_person_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'email',
         'settings' => array(),
         'type' => 'email_default',
-        'weight' => 6,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -161,7 +161,7 @@ function schemax_person_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 33,
+      'weight' => 9,
     ),
   );
 
@@ -205,6 +205,47 @@ function schemax_person_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-schemax_person-field_schemax_gender'
+  $field_instances['node-schemax_person-field_schemax_gender'] = array(
+    'bundle' => 'schemax_person',
+    'default_value' => array(
+      0 => array(
+        'value' => 'M',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_schemax_gender',
+    'label' => 'Gender',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 5,
+    ),
+  );
+
   // Exported field_instance: 'node-schemax_person-field_schemax_last_name'
   $field_instances['node-schemax_person-field_schemax_last_name'] = array(
     'bundle' => 'schemax_person',
@@ -217,7 +258,7 @@ function schemax_person_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -245,6 +286,46 @@ function schemax_person_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-schemax_person-field_schemax_middle_name'
+  $field_instances['node-schemax_person-field_schemax_middle_name'] = array(
+    'bundle' => 'schemax_person',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_schemax_middle_name',
+    'label' => 'Middle Name',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'node-schemax_person-field_schemax_phone'
   $field_instances['node-schemax_person-field_schemax_phone'] = array(
     'bundle' => 'schemax_person',
@@ -257,7 +338,7 @@ function schemax_person_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_plain',
-        'weight' => 4,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -280,7 +361,7 @@ function schemax_person_field_default_field_instances() {
         'placeholder' => '',
       ),
       'type' => 'telephone_default',
-      'weight' => 31,
+      'weight' => 7,
     ),
   );
 
@@ -339,7 +420,7 @@ function schemax_person_field_default_field_instances() {
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => 0,
+      'weight' => 1,
     ),
   );
 
@@ -349,8 +430,10 @@ function schemax_person_field_default_field_instances() {
   t('Date of Birth');
   t('Email');
   t('First Name');
+  t('Gender');
   t('Groups audience');
   t('Last Name');
+  t('Middle Name');
   t('Phone');
 
   return $field_instances;
