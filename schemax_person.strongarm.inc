@@ -117,7 +117,7 @@ function schemax_person_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '30',
+          'weight' => '13',
         ),
       ),
       'display' => array(),
