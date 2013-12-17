@@ -388,8 +388,8 @@ function schemax_person_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'og_group_ref',
-    'label' => 'Groups audience',
-    'required' => FALSE,
+    'label' => 'Teams',
+    'required' => 0,
     'settings' => array(
       'behaviors' => array(
         'og_widget' => array(
@@ -417,6 +417,7 @@ function schemax_person_field_default_field_instances() {
       ),
     ),
     'widget' => array(
+      'active' => 0,
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
@@ -431,10 +432,10 @@ function schemax_person_field_default_field_instances() {
   t('Email');
   t('First Name');
   t('Gender');
-  t('Groups audience');
   t('Last Name');
   t('Middle Name');
   t('Phone');
+  t('Teams');
 
   return $field_instances;
 }
