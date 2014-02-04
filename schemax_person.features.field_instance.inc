@@ -417,6 +417,7 @@ function schemax_person_field_default_field_instances() {
   $field_instances['node-schemax_person-og_group_ref'] = array(
     'bundle' => 'schemax_person',
     'default_value' => NULL,
+    'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -441,6 +442,7 @@ function schemax_person_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
+    'fences_wrapper' => 'div',
     'field_name' => 'og_group_ref',
     'label' => 'Teams',
     'required' => 0,
@@ -454,6 +456,14 @@ function schemax_person_field_default_field_instances() {
             'widget_type' => 'options_select',
           ),
           'status' => TRUE,
+        ),
+        'prepopulate' => array(
+          'action' => 'none',
+          'action_on_edit' => 0,
+          'fallback' => 'none',
+          'og_context' => 0,
+          'skip_perm' => 0,
+          'status' => 1,
         ),
       ),
       'user_register_form' => FALSE,
