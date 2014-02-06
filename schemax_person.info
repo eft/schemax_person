@@ -24,7 +24,6 @@ features[field_base][] = field_schemax_gender
 features[field_base][] = field_schemax_last_name
 features[field_base][] = field_schemax_middle_name
 features[field_base][] = field_schemax_phone
-features[field_base][] = og_group_ref
 features[field_instance][] = node-schemax_person-field_schemax_address
 features[field_instance][] = node-schemax_person-field_schemax_date_of_birth
 features[field_instance][] = node-schemax_person-field_schemax_email
