@@ -10,6 +10,63 @@
 function schemax_person_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-schemax_person-field_image'
+  $field_instances['node-schemax_person-field_image'] = array(
+    'bundle' => 'schemax_person',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'thumbnail',
+        ),
+        'type' => 'image',
+        'weight' => 14,
+      ),
+      'featured_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_image',
+    'label' => 'Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 8,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 11,
+    ),
+  );
+
   // Exported field_instance: 'node-schemax_person-field_schemax_address'
   $field_instances['node-schemax_person-field_schemax_address'] = array(
     'bundle' => 'schemax_person',
@@ -413,6 +470,62 @@ function schemax_person_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-schemax_person-field_schemax_user_reference'
+  $field_instances['node-schemax_person-field_schemax_user_reference'] = array(
+    'bundle' => 'schemax_person',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => 'Reference to one or more users who can control this person\'s record',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 15,
+      ),
+      'featured_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_schemax_user_reference',
+    'label' => 'User Reference',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 15,
+    ),
+  );
+
   // Exported field_instance: 'node-schemax_person-og_group_ref'
   $field_instances['node-schemax_person-og_group_ref'] = array(
     'bundle' => 'schemax_person',
@@ -496,10 +609,13 @@ function schemax_person_field_default_field_instances() {
   t('Email');
   t('First Name');
   t('Gender');
+  t('Image');
   t('Last Name');
   t('Middle Name');
   t('Phone');
+  t('Reference to one or more users who can control this person\'s record');
   t('Teams');
+  t('User Reference');
 
   return $field_instances;
 }
