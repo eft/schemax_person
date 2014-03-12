@@ -1,7 +1,41 @@
 <?php
+
 /**
  * @file
  * Code for the schemax_person feature.
  */
-
 include_once 'schemax_person.features.inc';
+
+/**
+ * Implements hook menu.
+ */
+//function schemax_person_menu() {
+//
+//  $items['merde'] = array(
+//    'page callback' => 'schemax_personUpdateDefaultImagePerson',
+//    'access callback' => TRUE,
+//    'type' => MENU_CALLBACK,
+//  );
+//  return $items;
+//}
+
+function schemax_personUpdateDefaultImagePerson() {
+
+  // Use EFQ to find fid of image
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'file')
+      ->propertyCondition('filename', 'head-shot-placeholder.png');
+  $result = $query->execute();
+  if (isset($result['file'])) {
+    $fids = array_keys($result['file']);
+  }
+
+  $fid = array_shift($fids);
+
+  $instance = field_info_instance('node', 'field_image', 'schemax_person');
+  $instance['settings']['default_image'] = $fid;
+  field_update_instance($instance);
+
+
+
+}
